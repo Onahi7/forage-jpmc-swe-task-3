@@ -3,6 +3,8 @@ export interface Order {
   size: number,
 }
 export interface ServerRespond {
+  top_bid_price: any;
+  top_ask_price: any;
   stock: string,
   top_bid: Order,
   top_ask: Order,
@@ -20,7 +22,7 @@ class DataStreamer {
       if (request.status === 200) {
         callback(JSON.parse(request.responseText));
       } else {
-        alert ('Request failed');
+        alert('Request failed');
       }
     }
 
